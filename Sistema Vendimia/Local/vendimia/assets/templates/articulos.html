@@ -1,0 +1,76 @@
+<!--******************* Content Articulos ********************-->
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title sizeTittle" ng-hide="accion"><i class="fa fa-shopping-bag"></i> Articulos Registrados</h3>
+            <h3 class="panel-title sizeTittle" ng-show="accion"><i class="fa fa-plus-square"></i> Registro de Articulos</h3>
+            <button type="button" class="btn pull-right btnTittle" ng-hide="accion" ng-click="NewArt()"><i class="fa fa-plus-square"></i> Nuevo Articulo</button>
+            <button type="button" class="btn pull-right btnTittle" ng-show="accion" ng-click="Close()"><i class="fa fa-window-close"></i></button>
+        </div>
+        <div class="panel-body" ng-hide="accion">
+            <span class="hint--left hint--rounded shearch" data-hint="Buscar">
+                <input type="text" class="form-control" ng-model="buscar" id="buscar" placeholder="Buscar">
+            </span>
+	        <div class="table-responsive">
+                <table class="table table-bordered table-hover table-font-size">
+                    <thead>
+                        <tr>
+                        <th class="col-md-1 col-xs-1 col-sm-1 titulos">Clave Articulo</th>
+                        <th class="col-md-10 col-xs-10 col-sm-10 titulos">Descripción</th>
+                        <th class="col-md-1 col-xs-1 col-sm-1 titulos"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="trarticulos">
+                        <tr ng-repeat="data in articles  | filter:buscar">
+                            <td class="table-position">{{data.id_articulo}}</td>
+                            <td>{{data.descripcion}}</td>
+                            <td class="table-position"><i class="fa fa-pencil-square-o table-cursor" ng-click="Modify($index)"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel-body" ng-show="accion">
+            <form class="form-horizontal" name="form_articulos" id="form_articulos">
+                <h5 class="FolioPosition">Clave: {{LastIdArticles}}</h5>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Descripción:</label>
+                    <div class="col-sm-6">
+                        <span class="hint--top hint--rounded hint-custom" data-hint="Descripción">
+                            <input type="text" class="form-control" autocomplete="off" id="Descripción" ng-model="article.descripcion" required>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Modelo:</label>
+                    <div class="col-sm-6">
+                        <span class="hint--top hint--rounded hint-custom" data-hint="Modelo">
+                            <input type="text" class="form-control" autocomplete="off" id="Modelo" ng-model="article.modelo" required>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Precio:</label>
+                    <div class="col-sm-1">
+                        <span class="hint--top hint--rounded hint-custom" data-hint="Precio">
+                            <input type="text" class="form-control" autocomplete="off" id="Precio" ng-model="article.precio" valid-float required>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Existencia:</label>
+                    <div class="col-sm-1">
+                        <span class="hint--top hint--rounded hint-custom" data-hint="Existencia">
+                            <input type="text" class="form-control" autocomplete="off" id="Existencia" ng-model="article.existencia" valid-number required>
+                        </span>
+                    </div>
+                </div>
+                <span class="variables">{{$parent.formValid=form_articulos.$valid}}</span>	
+            </form>
+            <div class="pull-right">
+                <button type="button" class="btn btnActions" id="cancelar" ng-click="Cancel()"><i class="fa fa-times"></i> Cancelar</button>
+                <button type="button" class="btn btnActions" ng-click="SaveArticle()"><i class="fa fa-floppy-o"></i> Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

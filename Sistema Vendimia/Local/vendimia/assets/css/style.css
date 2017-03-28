@@ -1,0 +1,168 @@
+/*NavBar*/
+#NavStyle {
+    background-color: #111;
+    border-bottom: #111 1px solid;
+    box-shadow: #111 0 0 8px;
+}
+.navbar-brand>img{
+    height: 65px;
+    margin-right: -12px;
+    margin-top: -21px;
+}
+.navbar-brand.tittle{
+    color: #9f8852;
+}
+.navbar-default .navbar-nav>li>a.tittleMenu{
+    color: white;
+}
+.navbar-default .navbar-date{
+    margin-right: 15px;
+    color: white;
+}
+/*Body*/
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/roboto/Roboto-Regular.ttf);
+}
+body {
+    font-family: Roboto ;
+}
+.table-responsive {
+    overflow-x: hidden;
+}
+.variables {
+    display: none;
+}
+.alert-input{
+    border: 2px solid #ec0000!important;
+}
+/*Tables*/
+.table th.titulos {
+    background-color: #545454 !important;
+    text-align: center;
+    color: #F3F3F3;
+}
+.table-font-size{
+    font-size: 12px;
+}
+.table-position{
+    text-align: center;
+}
+.table-cursor{
+    cursor: pointer;
+    font-size: 20px;
+}
+/*Ventas*/
+.sizeTittle{
+    font-size: 20px;
+}
+.btn{
+    box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
+    border: 1px solid #cccccc;
+    background: #555555;
+    text-align: center;
+    text-shadow: -1px -1px rgba(0,0,0,.2);
+    border-radius: 5px;
+    color: white;
+}
+.btnTittle{
+     margin-top: -28px;
+}
+.btnActions{
+    margin-top: 15px;
+}
+.btnActionsAling{
+    margin-top: 0px;
+}
+.btn:hover {
+    box-shadow: 3px 3px 3px grey;
+    color:white;
+}
+.btn:focus {
+    color:white;
+}
+.FolioPosition{
+    text-align: right;
+}
+.label-custom{
+    background-color: #c5c5c5;
+    font-size: 14px;
+    margin-right: 35px;
+    color: #333;
+    font-weight: bold;
+}
+.aling-custom{
+    margin-left: 15%
+}
+.span-customArticulo{
+    margin-left: -5px;
+}
+.lbl-padding{
+    padding-top: 10px;
+}
+.lbl-position{
+    text-align: right;
+}
+.lbl-totalSale{
+    right: -38px;
+}
+.lbl-totalWidht{
+    padding-left: 120px;
+}
+.div-tittle{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    background-color: #545454 !important;
+    text-align: center;
+    color: #F3F3F3;
+}
+.span-custom{
+    display: inline-block;
+    margin-top: 7px;
+}
+.hint-custom{
+    width: 100%;
+}
+/*Clientes*/
+.lbl-padding-aling{
+    padding-top: 17px;
+}
+/*Articulos*/
+.shearch{
+    margin: 5px 0px;
+    width: 100%;
+}
+.form-contro-custom-input{
+    margin: 5px 0px;
+}
+/*Resposive controls*/
+@media (max-width: 767px) {
+    .btnTittle{
+        margin-top: -22px;
+    }
+    .btn{
+        font-size: 11px;
+    }
+    /*Ventas*/
+    .btnActionsAling{
+        margin-top: 10px;
+    }
+    .sizeTittle {
+        font-size: 15px;
+    }
+    .btnmodal{
+        font-size: 11px;
+    }
+    .tittlemodal{
+        text-align: center;
+        font-size: 20px;
+    }
+    .contenmodal{
+        font-size: 10px;
+        text-align: right;
+    }
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
